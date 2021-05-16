@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/moviesWithoutPagingFragment"
+        android:name="com.warlock.tmdb.ui.fragments.withoutDb.withoutPageing.PopularListingFragment"
+        android:label="MoviesWithoutPaging" />
+
+    <fragment
+        android:id="@+id/moviesWithPagingFragment"
+        android:name="com.warlock.tmdb.ui.fragments.withoutDb.withPaging.PopularListingPagingFragment"
+        android:label="MoviesWithPaging" />
+
+
+    <fragment
+        android:id="@+id/moviesWithoutPagingFragmentDB"
+        android:name="com.warlock.tmdb.ui.fragments.withDb.withoutPageing.PopularListingFragmentDB"
+        android:label="MoviesWithoutPagingDB" />
+
+    <fragment
+        android:id="@+id/moviesWithPagingFragmentDB"
+        android:name="com.warlock.tmdb.ui.fragments.withDb.withPaging.PopularListingPagingFragmentDB"
+        android:label="MoviesWithPagingDB" />
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.warlock.tmdb.ui.fragments.homeFragment.HomeFragment"
+        android:label="HomeFragment" />
+
+    <fragment
+        android:id="@+id/infoScreenFragment"
+        android:name="com.warlock.tmdb.ui.fragments.infoScreen.InfoScreenFragment"
+        tools:layout="@layout/fragment_info_screen" />
+</navigation>
