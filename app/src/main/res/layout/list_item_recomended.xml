@@ -16,10 +16,10 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivBanner"
-                imageUrl="@{ result.posterPath!=null? obj.TALL_POSTER_PATH+result.posterPath : obj.TALL_POSTER_PATH}"
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:src="@drawable/video"
+                imageUrl="@{ (result.posterPath!=null) ? obj.TALL_POSTER_PATH + result.posterPath : obj.TALL_POSTER_PATH + result.backdropPath}"
                 app:layout_constraintBottom_toBottomOf="@id/ccParent"
                 app:layout_constraintDimensionRatio="2:3"
                 app:layout_constraintEnd_toEndOf="@id/ccParent"

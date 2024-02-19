@@ -6,9 +6,10 @@ import com.warlock.tmdb.BuildConfig
 object AppLog {
 
     private const val APP_LOG_TAG: String = BuildConfig.APPLICATION_ID
+    private  val isDebug: Boolean = BuildConfig.DEBUG
 
     fun d(tag: String, msg: String) {
-        if (BuildConfig.DEBUG) {
+        if (isDebug) {
             Log.d(tag, msg)
         }
     }
@@ -18,7 +19,7 @@ object AppLog {
     }
 
     fun e(tag: String, msg: String) {
-        if (BuildConfig.DEBUG) {
+        if (isDebug) {
             Log.e(tag, msg)
         }
     }
@@ -28,7 +29,7 @@ object AppLog {
     }
 
     fun w(tag: String, msg: String) {
-        if (BuildConfig.DEBUG) {
+        if (isDebug) {
             Log.w(tag, msg)
         }
     }
@@ -38,13 +39,13 @@ object AppLog {
     }
 
     fun printStackTrace(ex: Exception) {
-        if (BuildConfig.DEBUG) {
+        if (isDebug) {
             ex.printStackTrace()
         }
     }
 
     fun printStackTrace(ex: Throwable) {
-        if (BuildConfig.DEBUG) {
+        if (isDebug) {
             ex.stackTrace
         }
     }

@@ -109,7 +109,7 @@ class DbRepo(private val TMDBApi: TMDBApi, private val dao: MovieListDao) {
         )
 
         val refreshTrigger = MutableLiveData<Unit>()
-        val refreshState = Transformations.switchMap(refreshTrigger) {
+        val refreshState = refreshTrigger.switchMap {
             refresh()
         }
 

@@ -1,7 +1,6 @@
 package com.warlock.tmdb.data
 
 import android.app.Application
-import com.warlock.tmdb.BuildConfig
 import com.warlock.tmdb.data.db.AppDatabase
 import com.warlock.tmdb.data.network.HttpInterceptor
 import com.warlock.tmdb.data.network.TMDBApi
@@ -52,10 +51,10 @@ class AppContainer(context: Application) {
      */
     private fun getLoggingInterceptor(): HttpLoggingInterceptor {
         val logger = HttpLoggingInterceptor()
-        if (BuildConfig.DEBUG)
+//        if (BuildConfig.DEBUG)
             logger.level = HttpLoggingInterceptor.Level.BODY
-        else
-            logger.level = HttpLoggingInterceptor.Level.NONE
+//        else
+//            logger.level = HttpLoggingInterceptor.Level.NONE
         return logger
     }
 }

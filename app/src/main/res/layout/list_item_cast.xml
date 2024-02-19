@@ -16,10 +16,10 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivBanner"
-            imageUrl="@{ cast.profilePath!=null? obj.TALL_POSTER_PATH+cast.profilePath : obj.TALL_POSTER_PATH}"
             android:layout_width="0dp"
             android:layout_height="@dimen/_100sdp"
             android:scaleType="center"
+            imageUrl="@{ (cast.profilePath!=null) ? obj.TALL_POSTER_PATH + cast.profilePath : obj.TALL_POSTER_PATH + cast.name}"
             android:src="@drawable/avatar"
             app:layout_constraintDimensionRatio="2:3"
             app:layout_constraintEnd_toEndOf="@id/ccParent"

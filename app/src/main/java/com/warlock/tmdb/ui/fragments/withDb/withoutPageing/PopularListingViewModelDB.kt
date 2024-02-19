@@ -10,10 +10,11 @@ import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.launch
 
 
 class PopularListingViewModelDB(val repo: DbRepo) : BaseViewModel() {
-    var query = MutableLiveData<String>("")
+    var query = MutableLiveData("")
     var homeData = ArrayList<MovieResult>()
 
     @ExperimentalCoroutinesApi
@@ -36,4 +37,5 @@ class PopularListingViewModelDB(val repo: DbRepo) : BaseViewModel() {
     fun clearQuery() {
         query.value = ""
     }
+
 }

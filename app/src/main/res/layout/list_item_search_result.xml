@@ -7,7 +7,7 @@
 
         <variable
             name="obj"
-            type="com.warlock.tmdb.data.network.TMDBApi.Companion" />
+            type="com.warlock.tmdb.util.Constant" />
 
         <variable
             name="movie"
@@ -31,9 +31,10 @@
 
             <ImageView
                 android:id="@+id/ivBanner"
-                imageUrl="@{ (movie.posterPath==null) ? obj.POSTER_PATH + movie.backdropPath :   obj.POSTER_PATH + movie.posterPath}"
                 android:layout_width="@dimen/_65sdp"
                 android:layout_height="0dp"
+                imageUrl="@{(movie.posterPath!=null) ? obj.TALL_POSTER_PATH + movie.posterPath : obj.TALL_POSTER_PATH + movie.backdropPath}"
+
                 android:src="@drawable/video"
                 android:layout_margin="@dimen/_5sdp"
                 app:layout_constraintDimensionRatio="2:3"

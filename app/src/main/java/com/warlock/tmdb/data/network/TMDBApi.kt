@@ -79,7 +79,7 @@ interface TMDBApi {
 
     companion object {
         private const val TMDB_URL = "https://api.themoviedb.org/"
-        const val TMDB_API_KEY: String = "*****Your key goes here******"
+        const val TMDB_API_KEY: String = "Your key here"
         const val POSTER_PATH = "https://image.tmdb.org/t/p/w300/"
 
         fun create(okHttpClient: OkHttpClient): TMDBApi = create(

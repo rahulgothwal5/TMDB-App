@@ -19,6 +19,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
             android:layout_width="0dp"
             android:layout_height="@dimen/_60sdp"
             android:src="@drawable/youtube"
+            imageUrl="@{ (video.iso6391!=null) ? obj.WIDE_POSTER_PATH + video.iso6391 : obj.TALL_POSTER_PATH + video.iso31661}"
             app:layout_constraintDimensionRatio="3:2"
             app:layout_constraintEnd_toEndOf="@id/ccParent"
             app:layout_constraintStart_toStartOf="@id/ccParent"
@@ -39,6 +40,9 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
 
 <data>
 
+    <variable
+        name="obj"
+        type="com.warlock.tmdb.util.Constant" />
     <variable
         name="video"
         type="com.warlock.tmdb.data.db.entity.RelatedVideos" />

@@ -1,6 +1,7 @@
 package com.warlock.tmdb.ui.fragments.withoutDb.withoutPageing
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
@@ -56,7 +57,7 @@ class PopularListingFragment :
     }
 
     private fun setAdapter() {
-        adapterBaseList = SearchAdapterBaseList(popularVM.data) {
+        adapterBaseList = SearchAdapterBaseList(arrayListOf()) {
             navigateToFragment(
                 target = R.id.infoScreenFragment, bundle = bundleOf(
                     Constant.MOVIE_ID to it.id
@@ -95,7 +96,7 @@ class PopularListingFragment :
 
     override fun getViewModel() = popularVM
 
-    fun fetchPopularMovies() {
+    private fun fetchPopularMovies() {
         popularVM.repo.getPopular(popularVM.page).observe(viewLifecycleOwner, Observer {
             if (it.status.isFailed()) {
                 mBinding.swipeRefreshLayout.isRefreshing = false
@@ -105,7 +106,9 @@ class PopularListingFragment :
             } else if (it.status.isSuccessful()) {
                 mBinding.swipeRefreshLayout.isRefreshing = false
                 popularVM.homeData.addAll(it.data!!.movieResults)
+                Log.d("QWERTY", popularVM.homeData.size.toString())
                 adapterBaseList?.submitList(popularVM.homeData)
+
             }
         })
     }
