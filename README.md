@@ -40,14 +40,16 @@ git clone https://github.com/rahulgothwal5/TMDB-App.git
 4. Open the `build.gradle` file in the project level directory.
 5. Add your TMDB API key to the `build.gradle` file:
 gradle
+  ```
   android {
       ...
       buildTypes.each {
           it.buildConfigField 'String', 'TMDB_API_KEY', "\"YOUR_API_KEY\""
       }
   }
+  ```
 Replace "YOUR_API_KEY" with your actual TMDB API key.
-6. Sync the project with Gradle files.
+7. Sync the project with Gradle files.
 ## Usage
 
 Explore the codebase to learn how to develop an Android application using **Jetpack Pagination** in conjunction with **Room Database** for efficiently loading and displaying large datasets. The app fetches movie information from the TMDB API and stores it locally in the database. Asynchronous programming is handled efficiently using **Coroutines**.
